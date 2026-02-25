@@ -1,4 +1,4 @@
-
+/*
 public void main(String[] args) {
     // 1. Cria a temperatura inicial (exemplo: 25 graus Celsius)
     Temperatura tempOriginal = new Temperatura(25.0, "C");
@@ -84,3 +84,5 @@ public class Temperatura {
         System.out.println("Temperatura: " + valor + " " + escala);
     }
 }
+
+ */
