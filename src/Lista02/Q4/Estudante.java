@@ -1,10 +1,10 @@
 package Lista02.Q4;
 
+import java.util.Arrays;
+
 public class Estudante {
     String nome;
-
     int matricula;
-
     double[] notas;
 
     // Criação do Construtor com a exigência Varargrs
@@ -15,6 +15,8 @@ public class Estudante {
     }
 
     public double getMedia() {
+        if (notas == null || notas.length == 0) return 0;
+
         double soma = 0;
         for (double nota : notas) {
             soma += nota;
@@ -50,12 +52,14 @@ public class Estudante {
     }
 
     public String exDados() {
-        return ("Aluno(a): " + this.nome + "Número da matrícula: " + this.matricula + "Notas: " + this.notas);
+        return String.format("Aluno(a): %s | Número da matrícula: %d | Notas: %s",
+                this.nome, this.matricula, Arrays.toString(this.notas));
 
     }
 
 
-    public void exBoletin() {
-        System.out.println("Aluno(a): " + this.nome + " | Média do aluno(a): " + getMedia() + " | Situação atual do aluno(a): " + getSituacao());
+    public String exBoletim() {
+        return String.format("Aluno(a): %s | Média: %.2f | Situação: %s%n",
+                this.nome, getMedia(), getSituacao());
     }
 }
