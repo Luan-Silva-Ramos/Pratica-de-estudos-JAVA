@@ -185,7 +185,7 @@ public class ResolucaoLista02 {
 
                 c1.exibirDados();
 
-            // dobrando o valor do circulo
+            // dobrando o valor do raio
 
                 c1.raio = c1.raio * 2;
 
