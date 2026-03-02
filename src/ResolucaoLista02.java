@@ -1,5 +1,3 @@
-
-
 import Lista02.Q3.Temperatura;
 import Lista02.Q4.Estudante;
 import Lista02.Q5.ContaCorrente;
@@ -11,10 +9,10 @@ public class ResolucaoLista02 {
 
          //Questao01();
          //Questao03();
-         Questao04();
+         //Questao04();
          //Questao05();
          //Questao06();
-         //Questao07();
+         Questao07();
     }
     // Solução das Questões
 
@@ -64,16 +62,19 @@ public class ResolucaoLista02 {
                 // Conversão nas três escalas e mostrando o resultado
 
                 // Conversão para Celsius
+
                 Temperatura casoCelsius = registro.toCelsius();
                 System.out.println("Conversão da Temperatura para Cesius: ");
                 casoCelsius.printComEscala();
 
                 //Conversão para Fahrenheit
+
                 Temperatura casoFahrenheit = registro.toFahrenheit();
                 System.out.println("Conversão da Temperatura para Fahrenheit: ");
                 casoFahrenheit.printComEscala();
 
-                //COnversão para Kelvin
+                //Conversão para Kelvin
+
                 Temperatura casoKelvin = registro.toKelvin();
                 System.out.println("Conversão da Temperatura para Kelvin: ");
                 casoKelvin.printComEscala();
@@ -84,11 +85,33 @@ public class ResolucaoLista02 {
             System.out.println("Rodando Questao04");
                 Estudante dados = new Estudante ("John",5555, 70.0,40.0,50.6,80.4);
 
+                //Testando método .getMedia()
+
                 System.out.println("Média do aluno(a): " + dados.getMedia());
-                dados.setNotas(10.0, 10.0, 60.0);
+
+                //Testando método .setNotas()
+
+                dados.setNotas(10.0, 20.0, 60.0);
+
+                //Testando método .getNota()
+
                 System.out.println("Nota selecionada: " + dados.getNota(1));
+
+                //Testando método .exDados
+                //Criei esse método para exibir todos os dados do construtor, reunindo todos em uma
+                // unica chamada
+
                 System.out.println("Dados do aluno(a): " + dados.exDados());
+
+                //Testando o método .getSituacao()
+
                 System.out.println("Situação do aluno(a): " + dados.getSituacao());
+
+                //Testando método .exBoletim()
+                // Criei esse método para reunir todas as informações processadas onde foi
+                // usado metodos de  obter media, notas e situação, juntado todos esse dados
+                // em um unico método.
+
                 System.out.println("Boletim do aluno(a): " + dados.exBoletim());
 
 
@@ -96,6 +119,9 @@ public class ResolucaoLista02 {
 
         public static void Questao05() {
             System.out.println("Rodando Questao05");
+
+                // Criação das duas contas
+
                 ContaCorrente conta1 = new ContaCorrente("Harry", 1500.50, 123456);
                 ContaCorrente conta2 = new ContaCorrente("John", 499.50, 4567789);
 
@@ -150,15 +176,27 @@ public class ResolucaoLista02 {
         }
         public static void Questao06() {
             System.out.println("Rodando Questao06");
+
+                // Criação do circulo
+
                 Circulo c1 = new Circulo(5.0);
 
+            // exibindo os Dados do circulo
+
                 c1.exibirDados();
+
+            // dobrando o valor do circulo
 
                 c1.raio = c1.raio * 2;
 
                 c1.exibirDados();
+            // Criação do segundo circulo
 
                 Circulo c2 = new Circulo(3.0);
+
+                c2.exibirDados();
+
+            // Usado o método .contemOutro()
 
                 if (c2.contemOutro(c1)) {
                     System.out.println("Circulo(a): " + c1.raio + "contêm o de raio  " + c2.raio );
