@@ -10,7 +10,7 @@ public class Relogiomain {
             System.out.println("Horário atualzado: " + clockA.exibirHorario());
         }
 
-        Relogio clockB = new Relogio(00, 00, 30);
+        Relogio clockB = new Relogio(12, 20, 30);
 
         clockA.isMaiorQue(clockB);
     }

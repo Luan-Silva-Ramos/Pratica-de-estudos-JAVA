@@ -4,6 +4,8 @@ import Lista02.Q5.ContaCorrente;
 import Lista02.Q6.Circulo;
 import Lista02.Q7.Relogio;
 
+import java.sql.SQLOutput;
+
 public class ResolucaoLista02 {
     public static void main(String[] args) {
 
@@ -42,8 +44,13 @@ public class ResolucaoLista02 {
                 // Mostrando a saida
 
                 System.out.println(overFlowByte);
+                System.out.println(underFlowByte);
+
                 System.out.println(underFlowShort);
+                System.out.println(overFlowShort);
+
                 System.out.println(overFlowInt);
+                System.out.println(underFlowInt);
 
                 /*  A saida, após valores somados, se tornam negativas,
                  pois não conseguem ser representadas após somadas +1

@@ -37,10 +37,7 @@ public class Relogio {
 
         return String.format("%02d:%02d:%02d", horas, minutos, segundos);
 
-
-
     }
-
 
     public boolean isMaiorQue(Relogio outro) {
         int testeRel1 = (this.horas * 3600) + (this.minutos * 60) + this.segundos;

@@ -24,6 +24,7 @@ public class Temperatura {
 
         if (escalaUpper.equals("K") && valor < 0) {
             System.out.println("Erro");
+            return;
         }
     }
 

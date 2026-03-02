@@ -2,7 +2,7 @@ package Lista02.Q3;
 
 public class Principal {
     public static void main(String[] args) {
-        Temperatura registro = new Temperatura(30, "F");
+        Temperatura registro = new Temperatura(30, "C");
 
         // Conversão nas três escalas e mostrando o resultado
 
