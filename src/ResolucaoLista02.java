@@ -8,36 +8,48 @@ public class ResolucaoLista02 {
     public static void main(String[] args) {
 
          //Questao01();
-         //Questao03();
+         Questao03();
          //Questao04();
          //Questao05();
          //Questao06();
-         Questao07();
+         //Questao07();
     }
     // Solução das Questões
 
         public static void Questao01() {
             System.out.println("Rodando Questao01");
 
-                byte max = Byte.MAX_VALUE;
-                short min = Short.MIN_VALUE;
-                int max2 = Integer.MAX_VALUE;
+                byte maxByte = Byte.MAX_VALUE;
+                byte minByte = Byte.MIN_VALUE;
+
+                short maxShort = Short.MAX_VALUE;
+                short minShort = Short.MIN_VALUE;
+
+                int maxInt = Integer.MAX_VALUE;
+                int minInt = Integer.MIN_VALUE;
 
                 // Pegando os valores e somando mais um (+1)
 
-                byte sm = (byte) (max + 1);
-                short sm2 = (short) (min + 1);
-                int sm3 = (int) (max2 + 1);
+                byte overFlowByte = (byte) (maxByte + 1);
+                byte underFlowByte = (byte) (minByte - 1);
+
+                short overFlowShort = (short) (maxShort + 1);
+                short underFlowShort = (short) (minShort - 1);
+
+                int overFlowInt = (int) (maxInt + 1);
+                int underFlowInt = (int) (minInt - 1);
 
                 // Mostrando a saida
 
-                System.out.println(sm);
-                System.out.println(sm2);
-                System.out.println(sm3);
+                System.out.println(overFlowByte);
+                System.out.println(underFlowShort);
+                System.out.println(overFlowInt);
 
-                // A saida, após valores somados, se tornam negativas,
-                // pois não conseguem ser representadas após somadas +1
-                // que quebram seu tamanho original.
+                /*  A saida, após valores somados, se tornam negativas,
+                 pois não conseguem ser representadas após somadas +1
+                 que quebram o seu tamanho original.
+
+                 */
 
                 long valor = 300L;
 
@@ -45,11 +57,12 @@ public class ResolucaoLista02 {
 
                 System.out.println(valorbyte);
 
-                // O valor de um long é 64 bits, e um byte apenas 8 bits.
-                // Nessa conversão (casting), há o descarte de todos os
-                // bits superiores mantendo apenas os 8 bits menos
-                // significativos
+                /* O valor de um long é 64 bits, e um byte apenas 8 bits.
+                     Nessa conversão (casting), há o descarte de todos os
+                 bits superiores mantendo apenas os 8 bits menos
+                 significativos
 
+                 */
         }
 
         public static void Questao02() {
@@ -63,13 +76,21 @@ public class ResolucaoLista02 {
 
                 // Conversão para Celsius
 
-                Temperatura casoCelsius = registro.toCelsius();
-                System.out.println("Conversão da Temperatura para Cesius: ");
-                casoCelsius.printComEscala();
+                Temperatura casoCelsius = registro.toCelsius(); // A criação desse método consta em pegar o valor
+            // presente dentro do registro na classe Temperatura e comparando qual letra correspondente,
+            // resultando na conversão de determinada temperatura para Celsius.
+
+                System.out.println("Conversão da Temperatura para Celsius: ");
+                casoCelsius.printComEscala(); // Aqui o "casoCelsius" criada acima para se ter uma chamada,
+            // junto do método ".printComEscala()", que representa o valor e a escala
+            //  informada no "Temperatura registro".
 
                 //Conversão para Fahrenheit
 
-                Temperatura casoFahrenheit = registro.toFahrenheit();
+                Temperatura casoFahrenheit = registro.toFahrenheit();// A criação desse método consta em pegar o valor
+            // presente dentro do registro na classe Temperatura e comparando qual letra correspondente,
+            // resultando na conversão de determinada temperatura para Fahrenheit.
+
                 System.out.println("Conversão da Temperatura para Fahrenheit: ");
                 casoFahrenheit.printComEscala();
 
@@ -85,15 +106,30 @@ public class ResolucaoLista02 {
             System.out.println("Rodando Questao04");
                 Estudante dados = new Estudante ("John",5555, 70.0,40.0,50.6,80.4);
 
-                //Testando método .getMedia()
+                /*Testando método .getMedia()
+
+                No qual, pega as notas dentro do construtor e as divide pelo valor do tamanho do array
+
+                 */
 
                 System.out.println("Média do aluno(a): " + dados.getMedia());
 
-                //Testando método .setNotas()
+                /*Testando método .setNotas()
+
+                 Esse método ele reseta todas as notas, assim podendo adiconar novas
+             notas sem interferir no uso de outros métodos, facilitando o uso.
+
+                 */
 
                 dados.setNotas(10.0, 20.0, 60.0);
 
-                //Testando método .getNota()
+                /*Testando método .getNota()
+
+                Usando o valor dentro do indices criado na classe estudante fazendo comparação com a quantidade
+             de notas e se seu valor é igual o maior que zero.
+             Servindo para rastrear determinada nota
+
+                 */
 
                 System.out.println("Nota selecionada: " + dados.getNota(1));
 
@@ -113,7 +149,6 @@ public class ResolucaoLista02 {
                 // em um unico método.
 
                 System.out.println("Boletim do aluno(a): " + dados.exBoletim());
-
 
         }
 
@@ -177,7 +212,7 @@ public class ResolucaoLista02 {
         public static void Questao06() {
             System.out.println("Rodando Questao06");
 
-                // Criação do circulo
+                // Criação do círculo
 
                 Circulo c1 = new Circulo(5.0);
 
@@ -190,34 +225,56 @@ public class ResolucaoLista02 {
                 c1.raio = c1.raio * 2;
 
                 c1.exibirDados();
-            // Criação do segundo circulo
 
-                Circulo c2 = new Circulo(3.0);
+            // Criação do segundo círculo
+
+                Circulo c2 = new Circulo(0.0);
 
                 c2.exibirDados();
 
-            // Usado o método .contemOutro()
+            /* Usado o método .contemOutro()
+            retorna em Booleano se há a possibilidade de um círculo está presente em outro.
+             */
 
-                if (c2.contemOutro(c1)) {
-                    System.out.println("Circulo(a): " + c1.raio + "contêm o de raio  " + c2.raio );
+            System.out.println(c1.contemOutro(c2));
+            System.out.println(c2.contemOutro(c1));
+
+            Circulo maior = c2.maior(c1); /* Usando o método ".maior()" para que retorne em Booleano o se a
+            a comparação está correta, determinando se é true ou false
+            */
+
+            maior.exibirDados(); // Aqui, esse método vai exibir os dados do círculo maior.
+
+                /*if (c1.contemOutro(c2)) {
+                    System.out.println("Circulo(a): " + c1.raio + " contêm o de raio  " + c2.raio );
                 } else {
                     System.out.println("Circulo(a): " + c2.raio + " contem o de raio " + c1.raio);
                 }
+                c1.maior(c2);
+
+                 */
+
 
         }
         public static void Questao07() {
             System.out.println("Rodando Questao07");
                 Relogio clockA = new Relogio(23, 59, 57);
 
+                /* Aqui é passo e a mudança a cada segundo, resultando no horário modificado após
+            a inserção dos segundos.
+            */
+
                 for (int i = 0; i < 5; i++) {
                     clockA.tick();
 
-                    System.out.println("Horário atualzado: " + clockA.exibirHorario());
+                    System.out.println("Horário atualizado: " + clockA.exibirHorario());
                 }
-                Relogio clockB = new Relogio(00, 00, 30);
+
+                // Criação do segundo relógio para fazer a comparação
+
+                Relogio clockB = new Relogio(14, 20, 30);
 
                 clockA.isMaiorQue(clockB);
-
 
         }
 }

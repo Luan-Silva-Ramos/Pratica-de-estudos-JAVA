@@ -13,7 +13,7 @@ public class Estudante {
         this.matricula = matricula;
         this.notas = notas;
     }
-
+    // Criação do Método para saber a Média do aluno
     public double getMedia() {
         if (notas == null || notas.length == 0) return 0;
 
@@ -23,10 +23,13 @@ public class Estudante {
         }
         return soma / notas.length;
     }
-
+    // Criação do Método para adicionar notas
     public void setNotas(double... addNotas) {
         this.notas = addNotas;
     }
+
+    // Puxar a nota de uma lista de acordo com a localização dentro de uma
+    // lista ou array
 
     public double getNota(int indice) {
         if (indice >= 0 && indice < notas.length) {
@@ -34,6 +37,10 @@ public class Estudante {
         }
         return -1;
     }
+
+    // Método para saber a situação do aluno
+    // usando outros métodos dentro, pegando a
+    // média
 
     public String getSituacao() {
         double media = this.getMedia();
@@ -47,18 +54,24 @@ public class Estudante {
         }
     }
 
+    // Criei esse metodo para facilitar obter apenas o nome
+
     public String getNome() {
         return this.nome;
     }
 
+
+    // Essa pra facilitar a mostrar os dados primarios
     public String exDados() {
         return String.format("Aluno(a): %s | Número da matrícula: %d | Notas: %s",
                 this.nome, this.matricula, Arrays.toString(this.notas));
 
     }
 
+    // Método pra exibir os dados ja com nome, média e situação
+    // usei "Boletim" para exibir
 
-    public String exBoletim() {
+  public String exBoletim() {
         return String.format("Aluno(a): %s | Média: %.2f | Situação: %s%n",
                 this.nome, getMedia(), getSituacao());
     }
